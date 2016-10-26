@@ -1,0 +1,60 @@
+<h5 class="menu_title_1">제품 소개</h5>
+<hr>
+<ul class="sub_menu">
+  <li class="sub_up_menu menu_title_2"><p>콘크리트 제품</p></li>
+  <% if request.original_url.split('/')[-1] == "con_1" %>
+    <li class="sub_menu_active"><a href="/product/con_1">┗ 데크로드</a></li>
+  <% else %>
+    <li><a href="/product/con_1">┗ 데크로드</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "con_2" %>
+    <li class="sub_menu_active"><a href="/product/con_2">┗ 자연식생 호안블록</a></li>
+  <% else %>
+    <li><a href="/product/con_2">┗ 자연식생 호안블록</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "con_3" %>
+    <li class="sub_menu_active"><a href="/product/con_3">┗ 자연식생 축조블록</a></li>
+  <% else %>
+    <li><a href="/product/con_3">┗ 자연식생 축조블록</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "con_4" %>
+    <li class="sub_menu_active"><a href="/product/con_4">┗ 자연식생 방지블록</a></li>
+  <% else %>
+    <li><a href="/product/con_4">┗ 자연식생 방지블록</a></li>
+  <% end %>
+  <% if request.original_url.split('/')[-1] == "con_5" %>
+    <li class="sub_menu_active"><a href="/product/con_5">┗ 양지보강토 옹벽블록</a></li>
+  <% else %>
+    <li><a href="/product/con_5">┗ 양지보강토 옹벽블록</a></li>
+  <% end %>
+
+<br>
+  <li class="sub_up_menu menu_title_2"><p>자원형 하천복원 제목</p></li>
+  <% if request.original_url.split('/')[-1] == "river_1" %>
+    <li class="sub_menu_active" style="height:72px"><a href="/product/river_1">┗ 고강도 코이어<br>　　　 식생 앵커매트</a></li>
+  <% else %>
+    <li style="height:72px"><a href="/product/river_1">┗ 고강도 코이어<br>　　　 식생 앵커매트</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "river_2" %>
+    <li class="sub_menu_active"><a href="/product/river_2">┗ 멀티(보행) 매트</a></li>
+  <% else %>
+    <li><a href="/product/river_2">┗ 멀티(보행) 매트</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "river_3" %>
+    <li class="sub_menu_active" style="height:72px"><a href="/product/river_3">┗ 식생 코이어롤<br>　 (포트형)</a></li>
+  <% else %>
+    <li style="height:72px"><a href="/product/river_3">┗ 식생 코이어롤<br>　 (포트형)</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "river_4" %>
+    <li class="sub_menu_active"><a href="/product/river_4">┗ 식생 코이어롤 윙</a></li>
+  <% else %>
+    <li><a href="/product/river_4">┗ 식생 코이어롤 윙</a></li>
+  <% end %>
+
+</ul>

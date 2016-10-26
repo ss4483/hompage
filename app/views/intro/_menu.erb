@@ -1,0 +1,33 @@
+<h5 class="menu_title_1">회사 소개</h5>
+<hr>
+<ul class="sub_menu">
+  <% if request.original_url.split('/')[-1] == "info" %>
+    <li class="sub_menu_active"><a href="/intro/info">인사말</a></li>
+  <% else %>
+    <li><a href="/intro/info">인사말</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "biz" %>
+    <li class="sub_menu_active"><a href="/intro/biz">사업안내</a></li>
+  <% else %>
+    <li><a href="/intro/biz">사업안내</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "organization" %>
+    <li class="sub_menu_active"><a href="/intro/organization">조직도</a></li>
+  <% else %>
+    <li><a href="/intro/organization">조직도</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "patent" %>
+    <li class="sub_menu_active"><a href="/intro/patent">특허증</a></li>
+  <% else %>
+    <li><a href="/intro/patent">특허증</a></li>
+  <% end %>
+
+  <% if request.original_url.split('/')[-1] == "location" %>
+    <li class="sub_menu_active"><a href="/intro/location">오시는길</a></li>
+  <% else %>
+    <li><a href="/intro/location">오시는길</a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body style="position: relative;">
+<% if request.original_url.split('/').count == 3%>
+  <nav class="navbar" style="margin-bottom:30px; height:90px; position: absolute; top: 0px; left: 0;right: 0; margin-left: auto; margin-right: auto; z-index:3; background:white; opacity:0.9">
+<% else %>
+  <nav class="navbar" style="margin-bottom:30px; height:90px; position: absolute; top: 0px; left: 0;right: 0; margin-left: auto; margin-right: auto; z-index:3; background:white; opacity:1">
+<% end %>
+  <div class="container"style="margin-top: 40px;">
+    <div class="navbar-header" >
+      <a class="" href="/"><img  src="<%=image_path("logo.png")%>" alt="logo"style=" height:45px;margin-left:auto; margin-right:auto;padding-bottom:5xp "/></a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse" style="float:right">
+      <ul class="nav navbar-nav" >
+        <li class="my_main_menu"><a href="/">홈</a></li>
+        <li class="my_main_menu" id="intro_menu"><a href="/intro/info">회사 소개</a></li>
+        <li class="my_main_menu" id="product_menu"><a href="/product/con_1">제품 소개</a></li>
+        <li class="my_main_menu"><a href="/services/qna">문의 사항</a></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+  <div id="intro_sub" class="main_sub">
+    <div class="container" style="color:white; height:40px; text-align:center;">
+      <ul class="main_sub_ul" style="padding-left:500px;">
+        <li><a href="/intro/info">인사말</a></li>
+        <li><a  href="/intro/biz">사업안내</a></li>
+        <li><a  href="/intro/organization">조직도</a></li>
+        <li><a  href="/intro/patent">특허증</a></li>
+        <li><a  href="/intro/location">오시는길</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="product_sub" class="main_sub">
+    <div class="container" style="color:white; height:40px; font-size:15px; text-align:center;">
+      <ul class="main_sub_ul"  style="padding-left:600px;">
+        <li><a href="/product/con_1">콘크리트 제품</a></li>
+        <li><a href="/product/river_1">자원형 하천복원 제목</a></li>
+      </ul>
+    </div>
+  </div>
+</nav><!-- /.navbar -->
+<div style="z-index:1;">
+  <%= yield %>
+  <footer  style="background-color: #363636; padding-top:20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+  		    <h3 style="font-weight:bolder; color:white; margin-top:10px;">(주) 미래그린</h3>
+        </div>
+        <div class="col-md-10" style="color:white;">
+    			<address>
+    				대표자 :   &nbsp;&nbsp; E-mail : jsw6568@daum.net &nbsp;&nbsp; Phone : 010-3528-8532<br>
+    				<em>공장<span>　| </span>경상북도 경산시 압량면 가일길 23길 24-4 &nbsp;&nbsp; Tel : 053-219-8538  &nbsp;&nbsp;Fax : 053-219-8537 </em> <br>
+    			</address>
+    			<p class="copyright">Copyright © 2016 MIRAE GREEN  All Rights Reserved. <span class="skip">Design by Waplez</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div><!--/.container-->
+</body>
+</html>

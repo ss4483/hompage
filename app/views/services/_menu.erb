@@ -1,0 +1,9 @@
+<h5 class="menu_title_1">고객센터</h5>
+<hr>
+<ul class="sub_menu">
+  <% if request.original_url.split('/')[-1] == "qna" %>
+    <li class="sub_menu_active"><a href="/services/qna">Q & A</a></li>
+  <% else %>
+    <li><a href="/services/qna">Q & A</a></li>
+  <% end %>
+</ul>
