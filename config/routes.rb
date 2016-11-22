@@ -20,8 +20,20 @@ Rails.application.routes.draw do
   get '/product/river_4' => "product#river_4"
  # 고객센터
   get '/services/qna' => "services#qna"
+  get '/qna_write_view' => "services#qna_write_view"
+  post '/qna_write' => "services#qna_write"
+  get 'services/one_qna/:qna_id' => "services#one_qna"
+
+  post '/services/qna_update_view/:qna_id'=> 'services#qna_update_view'
+  get '/services/qna_update_pass/:qna_id'=> 'services#qna_update_pass'
+  post '/services/qna_update/:qna_id'=> 'services#qna_update'
+
+  get '/services/qna_delete_pass/:qna_id'=> 'services#qna_delete_pass'
+  post '/services/qna_delete/:qna_id'=> 'services#qna_delete'
 
 
+  post 'services/one_qna/:qna_id/q_answer' => "services#q_answer"
+  post 'services/one_qna/:a_id/q_answer_delete' => "services#q_answer_delete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

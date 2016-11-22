@@ -1,13 +1,55 @@
-<%= render partial: '/intro/mainBg'  %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-2" style="padding-left:0px;">
+  <div class="row" style="padding-left:40px;">
+    <div class="col-xs-2" style="padding-left:0px;">
       <%= render partial: '/intro/menu'  %>
     </div>
-    <div class="col-md-10">
-      <h4>오시는 길</h4>
+    <div class="col-xs-10">
+      <h4 class="product_title">오시는 길</h4>
       <hr>
-      안녕하세요
+      <p class="product_main_title">공장 위치</p>
+      <div id="map" style="width:100%;height:350px;"></div>
+      <hr style="border-top: 1px solid #5a5a5a !important;">
+      <div class="row">
+        <div class="col-md-6" style="border-right: 1px solid #5a5a5a; padding-right:0px; padding-top:100px; padding-bottom:100px">
+          <img  src="<%=image_path("logo2.png")%>" alt="logo"style="width:100%;"/>
+        </div>
+        <div class="col-md-6">
+          <p class="product_main_title">주소 : 경상북도 경산시 압량면 가일길 23길 24-4</p>
+          <p class="product_main_title">전화 : 053-219-8538</p>
+          <p class="product_main_title">팩스 : 053-219-8537</p>
+          <p class="product_main_title">이메일 : jsw6568@daum.net</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+<script>
+  var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+      mapOption = {
+          center: new daum.maps.LatLng(35.8419029, 128.78359520000004), // 지도의 중심좌표
+          level: 3 // 지도의 확대 레벨
+      };
+  var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+  // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+  var mapTypeControl = new daum.maps.MapTypeControl();
+
+  // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+  // daum.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+  map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+  // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+  var zoomControl = new daum.maps.ZoomControl();
+  map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+  // 마커가 표시될 위치입니다
+  var markerPosition  = new daum.maps.LatLng(35.8419029, 128.78359520000004);
+
+  // 마커를 생성합니다
+  var marker = new daum.maps.Marker({
+      position: markerPosition
+  });
+
+  // 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);
+</script>

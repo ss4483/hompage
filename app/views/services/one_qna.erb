@@ -1,0 +1,120 @@
+<div class="row"  style="padding-left:40px;">
+  <div class="col-md-2" style="padding:0px;">
+    <%= render partial: '/services/menu'  %>
+  </div>
+  <div class="col-md-10">
+    <h4 class="product_title">Q & A</h4>
+    <hr>
+      <div calss="row" style="border-top: 2px solid black; margin:20px; text-align:center;">
+        <div class="col-md-12 qna_head" style="text-align:left;">
+          <b><%= @one_qna.title %></b>
+        </div>
+        <div class="col-md-12" style="text-align:left; padding: 5px; border-bottom: 1px solid #e6e6e6;">
+          <span style=" font-size: 11px; color: #767676; font-weight:600"><%= @one_qna.name%></span>
+          <span style="padding: 0 5px 0 5px; color: #dfdfdf;"> | </span>
+          <span style=" font-size: 11px; color: #767676; font-weight:600"><%= @one_qna.updated_at.strftime("%y / %m / %d") %></span>
+        </div>
+        <div class="col-md-12" style="text-align:left; color: #767676;  padding: 20px 15px;">
+          <%= @one_qna.content %>
+        </div>
+
+        <div class="col-md-12" style="text-align: center; padding: 10px; border-bottom: 1px solid #e6e6e6; color: #767676; background-color: #fff; margin-bottom:10px"></div>
+
+        <div class="col-md-12" style="margin-bottom:20px;">
+          <a class="btn btn-default" style="float:right; font-weight:700;" href="/services/qna" role="button">
+            뒤로
+          </a>
+          <!-- modal띄우기 -->
+          <a class="btn btn-default" style="float:right; font-weight:700; margin-right:10px;" href="/services/qna_delete_pass/<%=@one_qna.id%>" role="button">
+            삭제
+          </a>
+          <a class="btn btn-default" style="float:right; font-weight:700; margin-right:10px;" href="/services/qna_update_pass/<%=@one_qna.id%>" role="button">
+            수정
+          </a>
+        </div>
+
+
+        <div class="col-md-12"  style="text-align:left;">
+          <p style="font-weight:500"><img src="<%=image_path("qna_icon.png")%>" height="20px"> 답변</p>
+            <% @one_qna.qna_answers.each do |a| %>
+              <div class="row" style=" padding-bottom: 5px;margin-bottom:15px;margin-top:5px; border-bottom: 1px solid #e6e6e6; color: #767676; background-color: #fff;">
+                <span class="col-md-2"><img src="<%=image_path("qna_icon.png")%>" height="20px"> <%=a.name%></span>
+                <span class="col-md-8"> <%= a.content %></span>
+                <span class="col-md-2" style="font-size:12px;">
+                  <%= a.updated_at.strftime("%y . %m . %d") %>
+                <button type="button" class="close" aria-label="Close"data-toggle="modal" data-target="#answer_delete_<%=a.id%>"><span aria-hidden="true">&times;</span></button>
+              </span>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="answer_delete_<%=a.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">답변 삭제하기</h4>
+                    </div>
+                    <form action="/services/one_qna/<%= a.id %>/q_answer_delete" method="POST">
+                      <input name ="utf8" type="hidden", value="✓">
+                      <input type="hidden" name="authenticity_token", value = "<%=form_authenticity_token %>">
+                      <div class="modal-body"style="text-align:center;">
+                        <span>비밀번호 입력 : </span><input type="password" name="pass" required>
+                        <input type="hidden" value="<%=@one_qna.id%>" name="qna_id">
+                      </div>
+                      <div class="modal-footer" >
+                        <button type="submit" class="btn btn-default" style="font-weight:700;">삭제하기</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+          <form action="/services/one_qna/<%= @one_qna.id %>/q_answer" method="POST">
+            <input name ="utf8" type="hidden", value="✓">
+            <input type="hidden" name="authenticity_token", value = "<%=form_authenticity_token %>">
+            <div class="row" style="padding:15px; text-align:center;background: #f7f7f7;border-bottom: 1px solid #e6e6e6;border-top: 1px solid #e6e6e6;">
+      				<div class="col-md-2" style="padding:0px">
+          			<input type="text" name="name" value="" class="col-xs-11" placeholder="이름" style="margin:5px" required>
+          			<input type="password" name="pass" value="" class="col-xs-11" placeholder="비밀번호" style="margin:5px" required>
+          		</div>
+          		<div class="col-md-8" style="padding:0px;">
+          		    <textarea style="height:60.4px; margin-top:5px ;margin-bottom:5px" name="content" class="col-md-12"  required></textarea>
+          		</div>
+              <div class="col-md-2" style="padding:5px">
+                <button  class="btn btn-default" style="height:60.4px; font-weight:700;" type="submit" >답변하기</button>
+              </div>
+          	</div>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<% if flash[:notice] %>
+<div  id="qna_alert" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">알림</h4>
+      </div>
+      <div class="modal-body">
+        <%= flash[:notice] %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+  <script>
+  $(function(){
+    $('#qna_alert').modal('show')
+  });
+  </script>
+<% end %>

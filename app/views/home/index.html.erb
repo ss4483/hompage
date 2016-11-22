@@ -1,15 +1,46 @@
-<div class="container">
-  <div class="flexslider">
-    <ul class="slides " style=" height:600px;">
-      <li >
-        <img src="<%=image_path("main-1.jpg")%>" alt="logo" style=" height:600px; width:1140px; margin-left:auto; margin-right:auto;"/>
-      </li>
-      <li>
-        <img  src="<%=image_path("main-2.jpg")%>" alt="logo"style=" height:600px; width:1140px; margin-left:auto; margin-right:auto; "/>
-      </li>
-      <li>
-        <img  src="<%=image_path("main-3.jpg")%>" alt="logo" style=" height:600px; width:1140px; margin-left:auto; margin-right:auto; "/>
-      </li>
-    </ul>
-  </div><br>
+<div class="row">
+  <!-- <img src="<%=image_path("tree.png")%>" alt="logo" style="width:100%;"/>
+  <img src="<%=image_path("1.png")%>" alt="logo" style="width:80%; margin-left:10%; "/> -->
+  <div class="col-lg-9 col-xs-12" style="margin-bottom:30px;">
+    <div class="flexslider" style="margin:0px;margin-left:0px; margin-right:0px;  height:600px;">
+      <ul class="slides " style="width:100%;">
+        <li >
+          <img  src="<%=image_path("main_img_1.png")%>" alt="logo" style="width:90%; height:600px; margin-left:auto; margin-right:auto;  border-radius: 5%; border:4px solid black"/>
+        </li>
+        <li>
+          <img src="<%=image_path("main_img_2.jpg")%>" alt="logo" style="width:90%; height:600px; margin-left:auto; margin-right:auto;  border-radius: 5%;border:4px solid black"/>
+        </li>
+        <li>
+          <img  src="<%=image_path("main_img_3.jpg")%>" alt="logo"style="width:90%; height:600px; margin-left:auto; margin-right:auto; border-radius: 5%;border:4px solid black "/>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--
+  <div class="col-md-1">　</div>
+  <div class="col-md-2" style="padding:0px">　
+      <%= render partial: '/home/quick'  %>
+  </div>-->
+
+  <div class="col-lg-3 col-xs-4" style="padding-left:0px">
+    <a href="/intro/patent">
+      <div class="main-box">
+        <img src="<%=image_path("patent_button.png")%>" alt="logo" style="width:100%;"/>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-xs-4" style="padding-left:0px">
+    <a href="/product/con_1">
+      <div class="main-box">
+        <img src="<%=image_path("catalog-button.png")%>" alt="logo" style="width:100%;"/>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-xs-4" style="padding-left:0px">
+    <a href="/services/qna">
+      <div class="main-box">
+        <img src="<%=image_path("QNA1.png")%>" alt="logo" style="width:100%; margin-top:15px;"/>
+      </div>
+    </a>
+  </div>
 </div>

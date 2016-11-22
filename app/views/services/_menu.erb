@@ -1,9 +1,10 @@
 <h5 class="menu_title_1">고객센터</h5>
 <hr>
 <ul class="sub_menu">
-  <% if request.original_url.split('/')[-1] == "qna" %>
+  <% if request.original_url.split('/')[-1] == "qna"  || request.original_url.split('/')[-1] == "qna_write_view" || request.original_url.split('/')[-3] == 'services' %>
     <li class="sub_menu_active"><a href="/services/qna">Q & A</a></li>
   <% else %>
     <li><a href="/services/qna">Q & A</a></li>
   <% end %>
 </ul>
+<div class="quick"><%= render partial: '/home/quick'  %></div>
