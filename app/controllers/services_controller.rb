@@ -12,73 +12,27 @@ class ServicesController < ApplicationController
                         content: params[:content]
                         )
     one_qna.save
-    flash[:notice]="글이 작성 되었습니다."
+
     redirect_to '/services/qna'
   end
   def one_qna
     @one_qna = Qna.find(params[:qna_id])
   end
 
-  def qna_delete_pass
-    @one_qna = Qna.find(params[:qna_id])
-  end
   def qna_delete
-    one_qna = Qna.find(params[:qna_id])
-    if one_qna.pass == params[:pass]
-      one_qna.destroy
-      flash[:notice]="글이 삭제 되었습니다."
-    else
-      flash[:notice]="비밀번호가 틀렸습니다."
-    end
-    redirect_to '/services/qna'
 
-  end
-
-  def qna_update_pass
-    @one_qna = Qna.find(params[:qna_id])
   end
   def qna_update_view
     @one_qna = Qna.find(params[:qna_id])
-    if @one_qna.pass == params[:pass]
-
-    else
-      flash[:notice]="비밀번호가 틀렸습니다."
-      redirect_to '/services/qna'
-    end
-
   end
   def qna_update
-    one_qna = Qna.find(params[:qna_id])
-    one_qna.title = params[:title]
-    one_qna.content = params[:content]
-
+    one_qna = Qna.new(name: params[:name],
+                        pass: params[:pass],
+                        title: params[:title],
+                        content: params[:content]
+                        )
     one_qna.save
-    flash[:notice]="수정 되었습니다."
-    redirect_to "/services/one_qna/#{one_qna.id}"
-  end
 
-
-
-
-  def q_answer
-    @answer = QnaAnswer.new
-    @answer.qna_id= params[:qna_id]
-    @answer.name= params[:name]
-    @answer.pass= params[:pass]
-    @answer.content= params[:content]
-
-    @answer.save
-
-    redirect_to :back
-  end
-  def q_answer_delete
-    answer = QnaAnswer.find(params[:a_id])
-    if answer.pass == params[:pass]
-      answer.destroy
-      flash[:notice]="답변이 삭제 되었습니다."
-    else
-      flash[:notice]="비밀번호가 틀렸습니다."
-    end
-    redirect_to "/services/one_qna/#{one_qna.id}"
+    redirect_to '/services/qna'
   end
 end
