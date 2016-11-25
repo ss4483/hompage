@@ -50,15 +50,12 @@
   .my-slider{
     height: 400px !important;
   }
-  html, body {
-    min-width: 768px;
-  }
   .quick{
     width:120px !important;
   }
   .logo{
     height:40px !important;
-    
+
     padding-bottom: 5px ;
     margin-top: 5px;
   }

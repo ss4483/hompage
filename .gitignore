@@ -16,5 +16,19 @@
 !/log/.keep
 /tmp
 
+
+/public/assets
+/public/uploads
+
 # Ignore application configuration
 /config/application.yml
+/config/initializers/fog.rb
+
+# Ignore public : might not required to be in git repository
+# /public
+
+# Ignore backup files with `.bak` extension
+*.bak
+
+# Ignore RubyMine Configurations
+/.idea
