@@ -1,13 +1,13 @@
 <div class="row" style="padding-left:40px;">
-  <div class="my-margin col-lg-2 col-xs-2" style="padding:0px;">
+  <div class="col-md-2 intro-production hidden-xs hidden-sm">
     <%= render partial: '/product/menu'  %>
   </div>
-  <div class="col-lg-9 col-xs-10">
+  <div class="col-md-9">
     <h4 class="product_title">데크로드</h4>
     <p class="product_sub" style="float: left;"></p>
     <hr>
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5 col-xs-8">
         <div class="flexslider" style="margin-top:20px;">
           <ul class="slides " style=" height:220px;">
             <li >
@@ -22,7 +22,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 col-xs-12">
         <p class="product_main_title">특성 및 규격</p>
         <div class="row" style="width:90%; margin:auto;">
           <div class="bs-example product_main" data-example-id="striped-table" style="border: 1px solid #ddd;">
@@ -58,6 +58,7 @@
 
             </table>
           </div><br>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -96,35 +97,35 @@
     </div>
 
     <div class="row">
-      <div class="col-md-1">　</div>
-      <div class="col-md-4">
+      <div class="col-xs-1">　</div>
+      <div class="col-xs-4">
         <p class="product_main_title">1단 완성도</p>
         <img  src="<%=image_path("con_1_ex_3.png")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <p class="product_main_title">단면도</p>
         <img  src="<%=image_path("con_1_ex_1.png")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
-      <div class="col-md-1">　</div>
+      <div class="col-xs-1">　</div>
     </div>
     <div class="row">
-      <div class="col-md-1">　</div>
-      <div class="col-md-4">
+      <div class="col-xs-1">　</div>
+      <div class="col-xs-4">
         <p class="product_main_title">1단 분해도</p>
         <img  src="<%=image_path("con_1_ex_2.png")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <p class="product_main_title">부위별 기능</p>
         <img  src="<%=image_path("con_1_ex_4.png")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
-      <div class="col-md-1">　</div>
+      <div class="col-xs-1">　</div>
     </div>
     <br>
 
     <br>
     <p class="product_main_title">시공 사례</p>
     <div class="row">
-      <div class="col-md-12 product_ex_img">
+      <div class="col-xs-12 product_ex_img">
         <div class="flexslider" style="margin-top:20px;">
           <ul class="slides">
             <li >
@@ -140,5 +141,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="quick_box hidden-xs hidden-sm" style="float:right; width:48px; margin-right:10px;">
+    <div class="quick"><%= render partial: '/home/quick'  %></div>
   </div>
 </div>
