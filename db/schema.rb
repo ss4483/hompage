@@ -16,19 +16,21 @@ ActiveRecord::Schema.define(version: 20161122065012) do
   create_table "qna_answers", force: :cascade do |t|
     t.text     "content"
     t.string   "name"
-    t.string   "pass"
+    t.string   "hashed_pass"
+    t.string   "salt"
     t.integer  "qna_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "qnas", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.string   "name"
-    t.string   "pass"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "hashed_pass"
+    t.string   "salt"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

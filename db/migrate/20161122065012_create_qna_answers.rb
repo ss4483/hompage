@@ -4,8 +4,9 @@ class CreateQnaAnswers < ActiveRecord::Migration
 
       t.text :content
       t.string :name
-      t.string :pass
-
+      t.string :hashed_pass
+      t.string :salt
+      
       t.integer :qna_id
 
       t.timestamps null: false

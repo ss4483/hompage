@@ -5,8 +5,9 @@ class CreateQnas < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.string :name
-      t.string :pass
-      
+      t.string :hashed_pass
+      t.string :salt
+
       t.timestamps null: false
     end
   end
