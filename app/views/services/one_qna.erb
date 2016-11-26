@@ -1,26 +1,26 @@
 <div class="row"  style="padding-left:40px;">
-  <div class="my-margin col-lg-2 col-md-2" style="padding:0px;">
+  <div class="col-md-2 intro-production hidden-xs hidden-sm">
     <%= render partial: '/services/menu'  %>
   </div>
-  <div class="col-lg-9 col-md-10">
+  <div class="col-md-9">
     <h4 class="product_title">Q & A</h4>
     <hr>
       <div calss="row" style="border-top: 2px solid black; margin:20px; text-align:center;">
-        <div class="col-md-12 qna_head" style="text-align:left;">
+        <div class="col-xs-12 qna_head" style="text-align:left;">
           <b><%= @one_qna.title %></b>
         </div>
-        <div class="col-md-12" style="text-align:left; padding: 5px; border-bottom: 1px solid #e6e6e6;">
+        <div class="col-xs-12" style="text-align:left; padding: 5px; border-bottom: 1px solid #e6e6e6;">
           <span style=" font-size: 11px; color: #767676; font-weight:600"><%= @one_qna.name%></span>
           <span style="padding: 0 5px 0 5px; color: #dfdfdf;"> | </span>
           <span style=" font-size: 11px; color: #767676; font-weight:600"><%= @one_qna.updated_at.strftime("%y / %m / %d") %></span>
         </div>
-        <div class="col-md-12" style="text-align:left; color: #767676;  padding: 20px 15px;">
+        <div class="col-xs-12" style="text-align:left; color: #767676;  padding: 20px 15px;">
           <%= @one_qna.content %>
         </div>
 
-        <div class="col-md-12" style="text-align: center; padding: 10px; border-bottom: 1px solid #e6e6e6; color: #767676; background-color: #fff; margin-bottom:10px"></div>
+        <div class="col-xs-12" style="text-align: center; padding: 10px; border-bottom: 1px solid #e6e6e6; color: #767676; background-color: #fff; margin-bottom:10px"></div>
 
-        <div class="col-md-12" style="margin-bottom:20px;">
+        <div class="col-xs-12" style="margin-bottom:20px;">
           <a class="btn btn-default" style="float:right; font-weight:700;" href="/services/qna" role="button">
             뒤로
           </a>
@@ -34,13 +34,13 @@
         </div>
 
 
-        <div class="col-md-12"  style="text-align:left;">
+        <div class="col-xs-12"  style="text-align:left;">
           <p style="font-weight:500"><img src="<%=image_path("qna_icon.png")%>" height="20px"> 답변</p>
             <% @one_qna.qna_answers.each do |a| %>
               <div class="row" style=" padding-bottom: 5px;margin-bottom:15px;margin-top:5px; border-bottom: 1px solid #e6e6e6; color: #767676; background-color: #fff;">
-                <span class="col-md-2"><img src="<%=image_path("qna_icon.png")%>" height="20px"> <%=a.name%></span>
-                <span class="col-md-8"> <%= a.content %></span>
-                <span class="col-md-2" style="font-size:12px;">
+                <span class="col-xs-2"><img src="<%=image_path("qna_icon.png")%>" height="20px"> <%=a.name%></span>
+                <span class="col-xs-8"> <%= a.content %></span>
+                <span class="col-xs-2" style="font-size:12px;">
                   <%= a.updated_at.strftime("%y . %m . %d") %>
                 <button type="button" class="close" aria-label="Close"data-toggle="modal" data-target="#answer_delete_<%=a.id%>"><span aria-hidden="true">&times;</span></button>
               </span>
@@ -74,14 +74,14 @@
             <input name ="utf8" type="hidden", value="✓">
             <input type="hidden" name="authenticity_token", value = "<%=form_authenticity_token %>">
             <div class="row" style="padding:15px; text-align:center;background: #f7f7f7;border-bottom: 1px solid #e6e6e6;border-top: 1px solid #e6e6e6;">
-      				<div class="col-md-2" style="padding:0px">
+      				<div class="col-xs-2" style="padding:0px">
           			<input type="text" name="name" value="" class="col-xs-11" placeholder="이름" style="margin:5px" required>
           			<input type="password" name="pass" value="" class="col-xs-11" placeholder="비밀번호" style="margin:5px" required>
           		</div>
-          		<div class="col-md-8" style="padding:0px;">
-          		    <textarea style="height:60.4px; margin-top:5px ;margin-bottom:5px" name="content" class="col-md-12"  required></textarea>
+          		<div class="col-xs-8" style="padding:0px;">
+          		    <textarea style="height:60.4px; margin-top:5px ;margin-bottom:5px" name="content" class="col-xs-12"  required></textarea>
           		</div>
-              <div class="col-md-2" style="padding:5px">
+              <div class="col-xs-2" style="padding:5px">
                 <button  class="btn btn-default" style="height:60.4px; font-weight:700;" type="submit" >답변하기</button>
               </div>
           	</div>

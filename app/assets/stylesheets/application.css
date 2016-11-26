@@ -69,6 +69,9 @@
     font-size: 11px !important;
     margin-top:30px !important;
   }
+  .con-slider{
+    margin-left:118px !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 992px){
   .my-margin{
@@ -114,6 +117,9 @@
   .intro_p{
     font-size: 11px !important;
     margin-top:30px !important;
+  }
+  .con-slider{
+    margin-left:118px !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px){
@@ -268,13 +274,13 @@ html, body {
   height: 53px;
 }
 .sub_menu li a{
-  font-size: 14px;
+  font-size: 12px;
   color: black;
   display: block;
   padding: 16px;
 }
 .sub_menu li a:hover{
-  font-size: 14px;
+  font-size: 12px;
   color: white;
   background: green;
   text-decoration: none;
@@ -308,16 +314,16 @@ html, body {
 .menu_title_1{
   color :#5a5a5a;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 22px;
 }
 .menu_title_2{
   color :#5a5a5a;
   font-weight: 700;
-  font-size: 20px !important;
+  font-size: 17px !important;
 }
 .product_title{
   font-weight: bold !important;
-  font-size: 30px !important;
+  font-size: 27px !important;
 }
 .product_sub{
   margin-left: 20px;
