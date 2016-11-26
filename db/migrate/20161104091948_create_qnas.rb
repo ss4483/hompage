@@ -7,6 +7,7 @@ class CreateQnas < ActiveRecord::Migration
       t.string :name
       t.string :hashed_pass
       t.string :salt
+      t.boolean :check
 
       t.timestamps null: false
     end

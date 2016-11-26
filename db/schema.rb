@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161122065012) do
     t.string   "name"
     t.string   "hashed_pass"
     t.string   "salt"
+    t.boolean  "check"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
