@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-
+  get '/sitemap' => "home#sitemap"
   get 'home/index'
   # 회사 소개
   get '/intro/info' => "intro#info"
