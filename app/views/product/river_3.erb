@@ -7,10 +7,10 @@
     <p class="product_sub" style="float: left;"></p>
     <hr>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6  col-xs-6">
         <img  src="<%=image_path("river_3-1.jpg")%>" alt="logo"style=" width:80%; margin-left:auto; margin-right:auto; "/>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-6">
         <img  src="<%=image_path("river_3-2.jpg")%>" alt="logo"style=" width:80%; margin-left:auto; margin-right:auto; "/>
       </div>
     </div>
@@ -19,7 +19,7 @@
       하천이나 호수에 풍부하고 다양한 자연이 회복되고, 새와 곤충이 어울리는 다양성을 가진 수변환경 즉 비오톰(소생물권)이 복원됩니다.
     </p>
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-7  col-xs-7">
         <p class="product_main_title">특성</p>
         <p class="product_main product_size">
            • 코코넛 장섬유로 된 100% 천연소재만을 사용해 하천의 자연성을 극대화<br>
@@ -30,7 +30,7 @@
            • 호안보호와 식물에 의한 복원기능을 극대화한 생태복원 제품<br>
          </p>
      </div>
-     <div class="col-md-5">
+     <div class="col-md-5  col-xs-5">
        <img  src="<%=image_path("river_3-3.jpg")%>" alt="logo"style="padding-top:30px; height:auto; width:80%; margin-left:auto; margin-right:auto; "/>
      </div>
    </div>
@@ -117,5 +117,8 @@
         <img  src="<%=image_path("river_3_ex_2.jpg")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
     </div>
+  </div>
+  <div class="quick_box hidden-xs hidden-sm" style="float:right; width:48px; margin-right:10px;">
+    <div class="quick"><%= render partial: '/home/quick'  %></div>
   </div>
 </div>

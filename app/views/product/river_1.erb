@@ -8,7 +8,7 @@
     <hr>
     <div class="row">
       <div class="col-md-2">　</div>
-      <div class="col-md-8">
+      <div class="col-md-8 col-xs-8 con-slider">
         <img  src="<%=image_path("river_1-1.jpg")%>" alt="logo"style="width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
       <div class="col-md-2">　</div>
@@ -123,5 +123,8 @@
         <img  src="<%=image_path("river_1_ex_2.jpg")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
     </div>
+  </div>
+  <div class="quick_box hidden-xs hidden-sm" style="float:right; width:48px; margin-right:10px;">
+    <div class="quick"><%= render partial: '/home/quick'  %></div>
   </div>
 </div>

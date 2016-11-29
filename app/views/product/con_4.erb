@@ -7,7 +7,7 @@
     <p class="product_sub" style="float: left;"></p>
     <hr>
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5 col-xs-8 con-slider">
         <div class="flexslider">
           <ul class="slides " style=" height:380px;">
             <li >
@@ -19,7 +19,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7  col-xs-12">
 
         <p class="product_main_title">특성</p>
         <div class="bs-example product_main product_size" data-example-id="striped-table" style="border: 1px solid #ddd;">
@@ -102,5 +102,8 @@
         <img  src="<%=image_path("con_4_ex_4.jpg")%>" alt="logo"style=" height:auto; width:100%; margin-left:auto; margin-right:auto; "/>
       </div>
     </div>
+  </div>
+  <div class="quick_box hidden-xs hidden-sm" style="float:right; width:48px; margin-right:10px;">
+    <div class="quick"><%= render partial: '/home/quick'  %></div>
   </div>
 </div>
