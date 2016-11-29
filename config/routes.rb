@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/sitemap' => "home#sitemap"
   get 'home/index'
   get '/googlea013502e74ca350b' => 'home#googlea013502e74ca350b'
-  get '/robots' => 'home#robots'
+
 
   # 회사 소개
   get '/intro/info' => "intro#info"
