@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def googlea013502e74ca350b
     render :layout => false
   end
+  def robots
+    render :layout => false
+  end
 end
