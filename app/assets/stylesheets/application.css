@@ -229,6 +229,7 @@ html, body {
 .my_main_menu{
   width: 120px;
   text-align: center;
+  font-weight: 800;
 }
 .my_main_menu a:hover {
   background: black !important;
@@ -236,7 +237,7 @@ html, body {
   color: white!important;
 }
 .my_main_menu a {
-   font-size:15px;
+   font-size:17px;
   color: black;
 }
 /*메인 네비바 보조메뉴*/
